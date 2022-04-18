@@ -21,5 +21,10 @@ file_loc = 'https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.t
 
 my_fruit_list = pd.read_csv(file_loc)
 
+# Add multi selector picker so thaty users can pick the fruit they want to include
+st.multiselect("Pick some fruits:", list(my_fruit_list.index))
+
+
+# Display the table on the page
 st.dataframe(my_fruit_list)
 
