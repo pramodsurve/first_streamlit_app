@@ -62,4 +62,5 @@ add_my_fruit = st.text_input('What fruit would you like to add?', 'jackfruit')
 st.write('Thanks for adding', add_my_fruit)
 
 
-
+# Wrong code
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
