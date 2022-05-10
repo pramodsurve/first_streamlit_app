@@ -41,7 +41,7 @@ st.dataframe(fruits_to_show)
 # Define a function to get data
 
 def function get_fruityvice_data(this_fruit_choice):
-  fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
+  fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
   # take the json version and normalize it
   fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
   # Retun value
