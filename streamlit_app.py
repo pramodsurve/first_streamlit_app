@@ -93,8 +93,5 @@ if st.button("Add a fruit to the List"):
   # import snowflake.connector
   my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
   back_from_function = insert_row_snowflake(add_my_fruit)
-  st.write(back_from_function)
-
-# Don't run anything past here until we troubleshoot
-st.stop()
+  st.text(back_from_function)
 
