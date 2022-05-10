@@ -49,7 +49,7 @@ def get_fruityvice_data(this_fruit_choice):
   
   
 # New Section to Display Fruityvice api response
-st.header('Fruityvice Fruit Advice!')
+st.header('View Our Fruit List - Add Your Favorites!')
 
 # If-Then construct
 try:
@@ -72,10 +72,11 @@ def get_fruit_load_list():
     return my_cur.fetchall()
   
 # Add a button to add fruit load list
-if st.button("Get Fruit Load List"):
+if st.button("Get Fruit List"):
   # import snowflake.connector
   my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
+  my_cnx.close()
   st.header("The fruit load list contains:")
   st.dataframe(my_data_rows)
 
@@ -93,5 +94,6 @@ if st.button("Add a fruit to the List"):
   # import snowflake.connector
   my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
   back_from_function = insert_row_snowflake(add_my_fruit)
+  my_cnx.close()
   st.text(back_from_function)
 
